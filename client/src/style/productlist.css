@@ -1,0 +1,58 @@
+.responsive-container {
+    max-width: 300px;
+    max-height: 480px;
+    overflow: hidden;
+    width: calc(100% / 3);
+    margin: 0 0 30px 14px;
+}
+.responsive-image {
+    width: 100%; /* 讓圖片填滿其容器的寬度 */
+    height: calc(100% - 75px); /* 讓圖片填滿其容器的高度 */
+    object-fit: cover;
+    object-position: center;
+    cursor: pointer;
+}
+.item-container {
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.item-name {
+    font-size: 80%;
+    font-weight: 500;
+    max-width: inherit;
+    color: rgba(36, 26, 15, 0.727);
+    margin-left: 1%;
+}
+.item-describe {
+    max-width: inherit;
+    display: flex;
+    color: rgba(35, 27, 17, 0.727);
+    >p {
+        font-size: 82%;
+        font-weight: 200;
+        margin: 1% 0 0 1%;
+    }
+    .item-stock{
+        font-size: 72%;
+        margin-right: 20px;
+    }
+    .text-light-grey{
+        color: rgba(35, 27, 17, 0.3);
+    }
+    .text-with-line {
+        text-decoration: line-through;
+        color: rgba(35, 27, 17, 0.3);
+        margin-right: 20px;
+    }
+}
+  
+
+@media (max-width: 1135px) {
+    .responsive-container {
+        max-width: inherit;
+        max-height: 820px;
+        width: calc(100% / 2 - (15px / 2));
+        &:nth-child(2n+1) { /* 奇數索引的樣式設置 */
+            margin-left: 0;
+        }
+    }
+}

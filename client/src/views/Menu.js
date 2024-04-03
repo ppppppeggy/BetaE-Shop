@@ -3,7 +3,8 @@ import { NavLink } from "react-router-dom";
 const category = {
   Top上衣: 1,
   Bottomd褲子: 2,
-  Accessory飾品: 3,
+  Onepiece連身套裝: 3,
+  Accessory飾品: 4,
 };
 
 const Menu = () => {
@@ -17,7 +18,5 @@ const Menu = () => {
     </nav>
   );
 };
-
-// const fetchCategory = () => {};
 
 export default Menu;

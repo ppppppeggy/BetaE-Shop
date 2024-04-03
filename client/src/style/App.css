@@ -1,0 +1,101 @@
+* {
+  font-size: 20px;
+  box-sizing: border-box;
+}
+*::before {
+  box-sizing: border-box;
+}
+*::after {
+  box-sizing: border-box;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #ffffff;
+  margin: 0 2% 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1;
+}
+
+.main-container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+}
+
+#sidebar {
+  width: 160px;
+  height: auto;
+  margin: 1% 1% 0 1%;
+  nav {
+    padding: 5px;
+    >a {
+      color: rgba(47, 23, 3, 0.524);
+      font-size: 85%;
+      font-weight: 500;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+      margin: 0 0 10% 0;
+      display: block;
+      text-decoration: none;
+      position: relative; /* 讓 ::after 偽元素相對於 a 元素定位 */
+      
+      &:hover::after {
+        content: ""; /* 添加偽元素內容 */
+        position: absolute; /* 絕對定位 */
+        left: 0; /* 相對於 a 元素的位置 */
+        bottom: -2px; /* 在底部，與底線距離為 -2px */
+        width: 100%; /* 與 a 元素同寬 */
+        height: 2px; /* 底線高度 */
+        background-color: red; /* 紅色底線 */
+      }
+    }
+  }
+}
+
+#main-content {
+  width: calc(100% - 160px);
+  margin-right: 1%;
+  display: flex;
+  flex-wrap: wrap;
+}
+#login-content {
+  width: 100%;
+}
+
+.feature {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+
+  >a {
+    font-weight: bold;
+    font-size: 150%;
+    color: black;
+    text-decoration: none;
+    padding: 0 15px;
+
+    &:hover {
+      color: rgb(236, 179, 233);
+    }
+  }
+}
+
+@media (max-width: 1135px) {
+  .main-container {
+    padding: 12px 10px 40px;
+  }
+  #sidebar {
+    display: none;
+  }
+  #main-content {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+}
